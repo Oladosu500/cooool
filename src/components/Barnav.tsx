@@ -16,14 +16,14 @@ export const Barnav = (props: Navbarprops) => {
 				</form>
 				</div>
 			</li> */}
-          <li><a href="http://">Features</a></li>
+          {/* <li><a href="http://">Features</a></li>
           <li><a href="http://">Pricing</a></li>
           <li><a href="http://">Analytics</a></li>
           <li><a href="http://">FAQS</a></li>
           <li>
             <a href="www">Log in</a>
           </li>
-          <li><a href="http://">Sign up</a></li>
+          <li><a href="http://">Sign up</a></li> */}
         </ul>
       </nav>
     </div>
