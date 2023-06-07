@@ -7,12 +7,13 @@ import Features from "./pages/Features";
 import Pricing from "./pages/Pricing";
 import Analytics from "./pages/Analytics";
 import Faqs from "./pages/Faqs";
+import Home from "./pages/Home";
 
 function App() {
-  const linkShort = () => {
-    alert("linkShort");
-    console.log("linkShort");
-  };
+  // const linkShort = () => {
+  //   alert("linkShort");
+  //   console.log("linkShort");
+  // };
 
   return (
     <>
@@ -22,13 +23,15 @@ function App() {
         <Barnav name="My Urls" />
 
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/myUrl" element={<MyUrl />} />
           <Route path="/Features" element={<Features />} />
           <Route path="/Pricing" element={<Pricing />} />
           <Route path="/Analytics" element={<Analytics />} />
           <Route path="/Faqs" element={<Faqs />} />
         </Routes>
-        <h1>URL SHORTNER</h1>
+
+        {/* <h1>URL SHORTNER</h1>
 
         <input type="text" placeholder="Enter URL" className="input" />
         <br />
@@ -45,8 +48,8 @@ function App() {
         <p>
           <strong>Note:</strong> Internet Explorer do not support sticky
           positioning and Safari requires a -webkit- prefix.
-        </p>
-        <p>
+        </p> */}
+        {/* <p>
           Some text to enable scrolling. Lorem ipsum dolor sit amet, illum
           definitiones no quo, maluisset concludaturque et eum, altera fabulas
           ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
@@ -94,7 +97,7 @@ function App() {
           ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
           Affert laboramus repudiandae nec et. Inciderint efficiantur his ad.
           Eum no molestiae voluptatibus.
-        </p>
+        </p> */}
       </div>
     </>
   );
