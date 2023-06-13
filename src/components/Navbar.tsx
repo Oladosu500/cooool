@@ -4,8 +4,8 @@ const Navbar = () => {
     <div>
       <nav>
         <Link to={"/"}>My URLs</Link> {"||"}
-        <Link to={"/Features"}>Features</Link> {"||"}
-        <Link to={"/Pricing"}>Pricing</Link> {"||"}
+        <Link to={"/Login"}>Login</Link> {"||"}
+        <Link to={"/Signup"}>Signup</Link> {"||"}
         <Link to={"/Analytics"}>Analytics</Link> {"||"}
         <Link to={"/Faqs"}>FAQs</Link>
       </nav>

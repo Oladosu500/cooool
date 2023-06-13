@@ -1,11 +1,47 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../Firebase";
 function Home() {
   const linkShort = () => {
     alert("linkShort");
     console.log("linkShort");
   };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+         const uid = user.uid;
+        // ...
+        console.log("uid", uid);
+      } else {
+        // User is signed out
+        // ...
+        console.log("user is signed out");
+      }
+    });
+  }, []);
+
+  const navigate = useNavigate();
+ 
+  const handleLogout = () => {               
+      signOut(auth).then(() => {
+      // Sign-out successful.
+          navigate("/");
+          console.log("Signed out successfully")
+      }).catch((error) => {
+      // An error happened.
+      });
+    }
   return (
     <>
+
+    <section>
+      ...
+    </section>
       <div>
         <h1>Home components</h1>
 
@@ -28,57 +64,22 @@ function Home() {
           positioning and Safari requires a -webkit- prefix.
         </p>
         <div>
-          <p>
-            Some text to enable scrolling. Lorem ipsum dolor sit amet, illum
-            definitiones no quo, maluisset concludaturque et eum, altera fabulas
-            ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-            Affert laboramus repudiandae nec et. Inciderint efficiantur his ad.
-            Eum no molestiae voluptatibus.
-          </p>
-          <p>
-            Some text to enable scrolling. Lorem ipsum dolor sit amet, illum
-            definitiones no quo, maluisset concludaturque et eum, altera fabulas
-            ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-            Affert laboramus repudiandae nec et. Inciderint efficiantur his ad.
-            Eum no molestiae voluptatibus.
-          </p>
-          <p>
-            Some text to enable scrolling. Lorem ipsum dolor sit amet, illum
-            definitiones no quo, maluisset concludaturque et eum, altera fabulas
-            ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-            Affert laboramus repudiandae nec et. Inciderint efficiantur his ad.
-            Eum no molestiae voluptatibus.
-          </p>
-          <p>
-            Some text to enable scrolling. Lorem ipsum dolor sit amet, illum
-            definitiones no quo, maluisset concludaturque et eum, altera fabulas
-            ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-            Affert laboramus repudiandae nec et. Inciderint efficiantur his ad.
-            Eum no molestiae voluptatibus.
-          </p>
-          <p>
-            Some text to enable scrolling. Lorem ipsum dolor sit amet, illum
-            definitiones no quo, maluisset concludaturque et eum, altera fabulas
-            ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-            Affert laboramus repudiandae nec et. Inciderint efficiantur his ad.
-            Eum no molestiae voluptatibus.
-          </p>
-          <p>
-            Some text to enable scrolling. Lorem ipsum dolor sit amet, illum
-            definitiones no quo, maluisset concludaturque et eum, altera fabulas
-            ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-            Affert laboramus repudiandae nec et. Inciderint efficiantur his ad.
-            Eum no molestiae voluptatibus.
-          </p>
-          <p>
-            Some text to enable scrolling. Lorem ipsum dolor sit amet, illum
-            definitiones no quo, maluisset concludaturque et eum, altera fabulas
-            ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-            Affert laboramus repudiandae nec et. Inciderint efficiantur his ad.
-            Eum no molestiae voluptatibus.
-          </p>
+          
+     
         </div>
       </div>
+      <nav>
+                <p>
+                    Welcome Home
+                </p>
+ 
+                <div>
+        			<button onClick={handleLogout}>
+                        Logout
+                    </button>
+        		</div>
+            </nav>
+
     </>
   );
 }

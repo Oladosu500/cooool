@@ -3,11 +3,11 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import MyUrl from "./pages/MyUrl";
-import Features from "./pages/Features";
-import Pricing from "./pages/Pricing";
+import Login from "./pages/Login";
 import Analytics from "./pages/Analytics";
 import Faqs from "./pages/Faqs";
 import Home from "./pages/Home";
+import Signup from "./pages/Signup";
 
 function App() {
   // const linkShort = () => {
@@ -25,8 +25,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/myUrl" element={<MyUrl />} />
-          <Route path="/Features" element={<Features />} />
-          <Route path="/Pricing" element={<Pricing />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Signup" element={<Signup />} />
           <Route path="/Analytics" element={<Analytics />} />
           <Route path="/Faqs" element={<Faqs />} />
         </Routes>
