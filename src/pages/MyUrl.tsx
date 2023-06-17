@@ -1,13 +1,13 @@
- import TextAnimate from "../components/TextAnimate";
+import TextAnimate from "../components/TextAnimate";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
-import image1  from "../images/Ellipse 1.png"
-import image2  from "../images/Rectangle 9.png"
+import image1 from "../images/Ellipse 1.png";
+import image2 from "../images/Rectangle 9.png";
+import Shortener from "../components/UrlShortener/Shortener";
 const MyUrls = () => {
   return (
     <main className="w-full flex flex-col items-center self-center">
-      
       <TextAnimate
         text="Optimize Your Online Experience With Our Advance Url Shortening Solution."
         className="!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
@@ -55,11 +55,24 @@ const MyUrls = () => {
         </div>
       </div>
 
-        <div className="mt-20 ">
-          <img src={image1} alt={"Ellipse"}  className="w-[900px] h-[49px]  left-[256px] top-[951px]" />
-          {/* <div className="absolute w-[1440px] h-24 left-0 top-[931px] bg-slate-200"></div> */}
-          <img src={image2} alt={"Rectangle"} className="absolute w-[1440px] left-[20px] h-[-280px]  " />
-        </div>
+      <div className="mt-20 ">
+        <img
+          src={image1}
+          alt={"Ellipse"}
+          className="w-[900px] h-[49px]  left-[256px] top-[951px]"
+        />
+        {/* <div className="absolute w-[1440px] h-24 left-0 top-[931px] bg-slate-200"></div> */}
+        <img
+          src={image2}
+          alt={"Rectangle"}
+          className="absolute w-[1440px] left-[20px] h-[-280px]  "
+        />
+
+        {/* ADD THE SHORTENER COMPONENT RIGHT HERE */}
+      </div>
+      <div className="w-full h-full m-10 p-10">
+        <Shortener />
+      </div>
     </main>
   );
 };
