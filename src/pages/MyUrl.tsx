@@ -25,7 +25,7 @@ const MyUrls = () => {
           }}
           whileTap={{ scale: 0.9 }}
         >
-          Sign Up
+          <Link to="/Signup">Sign Up</Link>
         </motion.button>
         <Link to="/LearnMore" className="text-primaryBlueBase text-sm ">
           Learn more
