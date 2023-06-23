@@ -1,7 +1,9 @@
 import {Routes, Route} from 'react-router-dom';
 import "./App.css";
+import CustomUrl from "./components/UrlShortener/CustomUrl";
 import Layout from "./components/Layout";
 import Navigation from "./components/Navigation";
+import Barcode from "./components/Barcode"
 import MyUrls from './pages/MyUrl';
 import Features from './pages/Features';
 import Pricing from './pages/Pricing';
@@ -30,7 +32,11 @@ function App() {
 
         
       </Layout>
+<Barcode /> 
+<br />
+<CustomUrl />
     </main>
+
   );
 }
 
